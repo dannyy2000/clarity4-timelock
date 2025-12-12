@@ -1,0 +1,24 @@
+[project]
+name = "clarity4-timelock"
+description = "Time-locked staking vault using Clarity 4's stacks-block-time feature"
+authors = ["Builder Challenge Participant"]
+telemetry = false
+requirements = []
+boot_contracts = []
+
+[contracts.timelock-vault]
+path = "contracts/timelock-vault.clar"
+clarity_version = 3
+
+[contracts.reward-token]
+path = "contracts/reward-token.clar"
+clarity_version = 3
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
